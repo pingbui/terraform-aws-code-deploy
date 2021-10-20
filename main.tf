@@ -50,7 +50,7 @@ resource "aws_iam_role_policy_attachment" "default" {
 
 module "sns_topic" {
   source  = "cloudposse/sns-topic/aws"
-  version = "0.16.0"
+  version = "0.19.2"
 
   enabled = local.default_sns_topic_enabled
   context = module.this.context
