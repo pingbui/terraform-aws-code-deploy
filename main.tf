@@ -15,8 +15,8 @@ locals {
   default_service_role_count          = local.default_service_role_enabled ? 1 : 0
   service_role_arn                    = local.default_service_role_enabled ? join("", aws_iam_role.default.*.arn) : var.service_role_arn
   default_policy_name = {
-    Server = "AWSCodeDeployRole"
-    Lambda = "AWSCodeDeployRoleForLambda"
+    Server = "service-role/AWSCodeDeployRole"
+    Lambda = "service-role/AWSCodeDeployRoleForLambda"
     ECS    = "AWSCodeDeployRoleForECS"
   }
 }
